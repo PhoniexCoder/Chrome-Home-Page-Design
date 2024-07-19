@@ -2,8 +2,19 @@
 
 This is the look of Home Page.
 
-![Screenshot 2024-07-19 150328](https://github.com/user-attachments/assets/e3302aa0-7c64-4ec8-b111-6b1df9bcbe80)
+https://github.com/user-attachments/assets/e3302aa0-7c64-4ec8-b111-6b1df9bcbe80
 
 This Web Page is Fully functional..
 
 1. You can search anything here , after enter the text just hit enter.
+
+https://github.com/user-attachments/assets/51dc2261-53e7-41be-bc5c-edb6a3f9a531
+
+2. You can search by voice too.
+   
+https://github.com/user-attachments/assets/e16a30cd-b571-47d7-9fbc-6a52ff56c2fb
+
+3. The text in the center is editable , you can write anything you want in that place.
+   
+https://github.com/user-attachments/assets/11b333b3-2679-4cbb-8299-549ea0c86fe7
+
