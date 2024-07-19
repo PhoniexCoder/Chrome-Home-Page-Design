@@ -1,6 +1,6 @@
 # Chrome-Home-Page
 
-This is the look of Home Page.
+This is how the home page looks.
 
 ![Screenshot 2024-07-19 150328](https://github.com/user-attachments/assets/3ff9d701-e354-442c-ae07-4cd1744e8b4d)
 
