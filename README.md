@@ -2,7 +2,7 @@
 
 This is the look of Home Page.
 
-https://github.com/user-attachments/assets/e3302aa0-7c64-4ec8-b111-6b1df9bcbe80
+![Screenshot 2024-07-19 150328](https://github.com/user-attachments/assets/3ff9d701-e354-442c-ae07-4cd1744e8b4d)
 
 This Web Page is Fully functional..
 
