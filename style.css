@@ -2,15 +2,23 @@
 
 :root {
   --body-color: 48 48 58;
-
   --font-color: 255 255 255;
   --highlight-color: 0 0 0;
-
   --theme-background: 20 20 20;
-
   --theme-light: 0 0 0;
   --theme-medium: 0 0 0;
   --theme-dark: 0 0 0;
+}
+
+/* Light Theme */
+[data-theme="light"] {
+  --body-color: 245 245 245;
+  --font-color: 30 30 30;
+  --highlight-color: 0 0 0;
+  --theme-background: 255 255 255;
+  --theme-light: 255 255 255;
+  --theme-medium: 230 230 230;
+  --theme-dark: 200 200 200;
 }
 
 body {
@@ -77,16 +85,6 @@ input {
 .no-scrollbar::-webkit-scrollbar {
   height: 0px;
   width: 0px;
-}
-
-#phone {
-  background-color: rgb(var(--theme-background));
-  box-shadow: rgba(0, 0, 0, 0.2) 0px 8px 24px;
-  height: 851px;
-  width: 393px;
-  margin: 100px auto;
-  position: relative;
-  overflow: hidden;
 }
 
 #main-wrapper {
@@ -208,13 +206,21 @@ input {
   text-decoration: none;
 }
 
-#apps-container>a>i {
+#apps-container>a>i,
+#apps-container>a .app-icon i {
   height: 2rem;
   width: 2rem;
   flex-shrink: 0;
   font-size: 1.5rem;
   line-height: 2rem;
   text-align: center;
+}
+
+#apps-container>a .app-icon img {
+  height: 2rem;
+  width: 2rem;
+  object-fit: contain;
+  display: inline-block;
 }
 
 #apps-container>a>.label {
@@ -243,6 +249,20 @@ input {
 
 #apps-container>a:is(:hover, :focus) {
   background-color: rgba(203, 188, 188, 0.4);
+}
+
+#apps-container>a .remove-app {
+  margin-left: auto;
+  background: none;
+  border: none;
+  color: red;
+  cursor: pointer;
+  font-size: 1.2rem;
+  padding: 0 0.3rem;
+}
+
+#apps-container>a .remove-app:focus {
+  outline: 2px solid #00aad4;
 }
 
 #apps-container>a:first-child {
@@ -295,98 +315,168 @@ input {
   border-bottom-right-radius: 0.5rem;
 }
 
-#discover-container {
-  width: 100%;
+/* --- Light Theme Fixes for Better Visibility --- */
+[data-theme="light"] body,
+[data-theme="light"] #main-wrapper,
+[data-theme="light"] #content {
+  background-color: rgb(var(--body-color));
 }
 
-#discover-toggles {
-  width: 80%;
-  display: flex;
-  background-color: rgb(255 255 255 / 7.5%);
-  margin: auto;
-  border-radius: 0.5rem;
+[data-theme="light"] #links-container>a {
+  color: #222;
 }
 
-#discover-toggles>button {
-  flex-grow: 1;
-  background-color: transparent;
-  padding: 0.75rem;
-  border: none;
-  border-radius: 0.5rem;
-  outline: none;
-  font-size: 0.8rem;
-  cursor: pointer;
+[data-theme="light"] #apps-container>a {
+  background-color: #f2f2f2;
+  color: #222;
 }
 
-#discover-toggles>button:first-child {
-  border-top-right-radius: 0.5rem;
-  border-bottom-right-radius: 0.5rem;
-  background-color: rgb(255 255 255 / 10%);
+[data-theme="light"] #apps-container>a>.label>.url {
+  color: #888;
 }
 
-#discover-toggles>button:last-child {
-  border-top-left-radius: 0.25rem;
-  border-bottom-left-radius: 0.25rem;
+[data-theme="light"] #apps-container>a:is(:hover, :focus) {
+  background-color: #e0f7fa;
 }
 
-#discover-feed {
-  margin-top: 0.5rem;
+[data-theme="light"] #apps-container>a .remove-app {
+  color: #d32f2f;
 }
 
-.discover-card {
-  display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
-  text-decoration: none;
+[data-theme="light"] .social-button {
+  background: #f2f2f2;
+  color: #222;
+  border: 1px solid #ddd;
 }
 
-.discover-card>img {
-  width: 100%;
-  aspect-ratio: 1.6 / 1;
-  object-fit: cover;
-  border-radius: 0.5rem;
-  border-bottom-left-radius: 0.25rem;
-  border-bottom-right-radius: 0.25rem;
+[data-theme="light"] .social-button:focus,
+[data-theme="light"] .social-button:hover {
+  background: #00aad4;
+  color: #fff;
 }
 
-.discover-card>.discover-card-info {
-  display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
-  background-color: rgb(255 255 255 / 10%);
-  padding: 0.75rem;
-  border-radius: 0.5rem;
-  border-top-left-radius: 0.25rem;
-  border-top-right-radius: 0.25rem;
+[data-theme="light"] .social-button i,
+[data-theme="light"] .social-button svg {
+  color: #222;
 }
 
-.discover-card>.discover-card-info>.title {
-  font-size: 0.8rem;
+[data-theme="light"] h3,
+[data-theme="light"] h3:after {
+  color: #222 !important;
+  text-shadow: 0px 0px 20px #00aad4;
 }
 
-.discover-card>.discover-card-info>.desc {
-  font-size: 0.7rem;
-  color: rgb(255 255 255 / 50%);
+[data-theme="light"] h3:before {
+  background: #00aad4;
 }
 
-@media(max-width: 500px) {
+[data-theme="light"] #search-input-container,
+[data-theme="light"] #search-container>button {
+  background-color: #f2f2f2;
+  color: #222;
+}
+
+[data-theme="light"] #search-input-container:has(input:focus),
+[data-theme="light"] #search-container>button:focus {
+  background-color: #e0f7fa;
+}
+
+[data-theme="light"] #search-input-container>input {
+  color: #222;
+}
+
+[data-theme="light"] .highlight {
+  color: #00aad4;
+}
+
+/* Responsive Design Enhancements */
+@media (max-width: 1200px) {
+  #search-input-container {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+  }
+  #search-container {
+    margin: 1rem 2rem;
+  }
+}
+
+@media (max-width: 900px) {
+  #search-container {
+    margin: 1rem 2rem;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: stretch;
+  }
+  #search-input-container {
+    width: 100%;
+    border-radius: 0.5rem;
+  }
+  #apps-container {
+    grid-template-columns: repeat(2, 50%);
+    gap: 0.5rem;
+  }
+  .mycontainer {
+    padding-left: 2%;
+    padding-right: 2%;
+  }
+  #links-container {
+    gap: 2rem;
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+}
+
+@media (max-width: 700px) {
+  #apps-container {
+    grid-template-columns: repeat(2, 50%);
+    gap: 0.5rem;
+  }
+  .mycontainer {
+    padding-left: 2%;
+    padding-right: 2%;
+  }
+  #links-container {
+    gap: 2rem;
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+}
+
+@media (max-width: 500px) {
   body {
     overflow: auto;
   }
-
-  #phone {
-    height: 100vh;
-    display: flex;
-    width: 100%;
-    margin: 0px auto;
-  }
-
   #main-wrapper {
     width: 100%;
     flex-grow: 1;
   }
+  #search-container {
+    margin: 1rem 0.5rem;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: stretch;
+  }
+  #search-input-container {
+    width: 100%;
+    border-radius: 0.5rem;
+  }
+  #apps-container {
+    grid-template-columns: 100%;
+    gap: 0.5rem;
+  }
+  .mycontainer {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  #links-container {
+    gap: 1rem;
+    padding-left: 2%;
+    padding-right: 2%;
+  }
 }
 
+/* --- Social Buttons, Atom Animation, and Other Styles (unchanged) --- */
 .social-buttons {
   display: flex;
   flex-wrap: wrap;
@@ -448,99 +538,13 @@ input {
   width: 40%;
 }
 
-.social-button--instagram {
-  color: #3f729b;
-  /* adjust the color to match your design */
-  background-color: white;
-  border: none;
-  padding: 0;
-  margin: 0 0;
-  font-size: 24px;
-  /* adjust the font size to match the other icons */
-}
-
-.social-button--youtube {
-  color: #ff0000;
-  /* adjust the color to match your design */
-  background-color: white;
-  border: none;
-  padding: 0;
-  margin: 0 0;
-  font-size: 24px;
-  /* adjust the font size to match the other icons */
-}
-
-.social-button--mail {
-  color: #0072c6;
-}
-
-.social-button--mail::after {
-  background: #0072c6;
-}
-
-.social-button--facebook {
-  color: #3b5999;
-}
-
-.social-button--facebook::after {
-  background: #3b5999;
-}
-
-.social-button--github {
-  color: #6e5494;
-}
-
-.social-button--github::after {
-  background: #6e5494;
-}
-
-.social-button--codepen {
-  color: #212121;
-}
-
-.social-button--codepen::after {
-  background: #212121;
-}
-
-.social-button--steam {
-  color: #7da10e;
-}
-
-.social-button--steam::after {
-  background: #7da10e;
-}
-
-.social-button--snapchat {
-  color: #eec900;
-}
-
-.social-button--snapchat::after {
-  background: #eec900;
-}
-
-.social-button--twitter {
-  color: #55acee;
-}
-
-.social-button--twitter::after {
-  background: #55acee;
-}
-
-.social-button--instagram {
-  color: #e4405f;
-}
-
-.social-button--instagram::after {
-  background: #e4405f;
-}
-
-.social-button--youtube {
-  color: #c12127;
-}
-
-.social-button--youtube::after {
-  background: #c12127;
-}
+.social-button--instagram { color: #e4405f; }
+.social-button--youtube { color: #c12127; }
+.social-button--facebook { color: #3b5999; }
+.social-button--github { color: #6e5494; }
+.social-button--codepen { color: #212121; }
+.social-button--snapchat { color: #eec900; }
+.social-button--twitter { color: #55acee; }
 
 /* animated logo effect */
 
@@ -1258,4 +1262,29 @@ h3:before {
   background-color: #f2f2f2;
   border: 1px solid #ccc;
   box-sizing: border-box;
+}
+
+[data-theme="light"] .atom {
+  --atom-color-hex: #ff1744;
+  --atom-color-rgb: 255, 23, 68;
+  --electron-color-hex: #ff8a80;
+}
+[data-theme="light"] .atom::before {
+  background: var(--electron-color-hex);
+  box-shadow: 0 0 3px 0 var(--atom-color-hex);
+}
+#apps-container>a .fa-stack-overflow { color: #f48024 !important; }
+#apps-container>a .fa-github { color: #333 !important; }
+#apps-container>a .fa-discord { color: #5865f2 !important; }
+#apps-container>a .fa-youtube { color: #ff0000 !important; }
+#apps-container>a .fa-spotify { color: #1db954 !important; }
+#apps-container>a .fa-whatsapp { color: #25d366 !important; }
+#apps-container>a .fa-amazon { color: #ff9900 !important; }
+#apps-container>a .fa-linkedin { color: #0077b5 !important; }
+#apps-container>a .fa-globe { color: #00aad4 !important; }
+
+#apps-container>a .app-icon i,
+#apps-container>a .app-icon svg {
+  color: inherit;
+  filter: none;
 }
